@@ -10,4 +10,4 @@ A simple number guessing game built with Django. The player guesses a random num
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/repository-name.git
+  [ git clone https://github.com/username/repository-name.git](https://github.com/Yara-Safrao/guessing_game_project.git)
