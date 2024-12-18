@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Guessing Game</title>
+    {% load static %}
+    <!-- Carrega as tags estáticas -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Number Guessing Game!</h1>
+      <p>I'm thinking of a number between 1 and 100.</p>
+
+      <form method="post">
+        {% csrf_token %}
+        <label for="guess">Enter your guess:</label>
+        <input type="number" name="guess" min="1" max="100" />
+        <div class="button_1">
+          <button type="submit" name="guess_btn" class="button_2">
+            Submit
+          </button>
+          <button type="submit" name="hint">Hint</button>
+          <button type="submit" name="reset">Restart Game</button>
+        </div>
+      </form>
+
+      {% if message %}
+      <p><strong>{{ message }}</strong></p>
+      {% endif %} {% if hint_message %}
+      <p><strong>{{ hint_message }}</strong></p>
+      {% endif %}
+    </div>
+  </body>
+</html>
