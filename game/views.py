@@ -16,12 +16,12 @@ def guess_number(request):
     hint_message = ''
 
     if request.method == 'POST':
-        # Resetar o jogo
+        # Restart
         if 'reset' in request.POST:
-            request.session.flush()  # Limpa a sessão
+            request.session.flush()  # clean 
             return render(request, 'game/guess.html', {'message': 'Game restarted!'})
 
-        # Fornecer uma dica
+        # give a hint
         elif 'hint' in request.POST:
             if not request.session['hint_used']:
                 if number_to_guess % 2 == 0:
